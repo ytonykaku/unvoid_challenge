@@ -3,37 +3,25 @@ import Row from './Row';
 import { PieceProps } from '../Piece/Piece';
 
 type BoardTile = PieceProps | null;
+interface BoardProps {
+  boardState: BoardTile[][];
+  selectedPiece: { row: number; col: number } | null;
+  possibleMoves: { row: number; col: number }[];
+  onTileClick: (row: number, col: number) => void;
+}
 
-const initialBoardState: BoardTile[][] = [
-  [
-    { type: 'designer', player: 'player2' }, { type: 'developer', player: 'player2' },
-    { type: 'developer', player: 'player2' }, { type: 'designer', player: 'player2' },
-    null, null, null, null
-  ],
-  [
-    { type: 'product-owner', player: 'player2' }, { type: 'product-owner', player: 'player2' },
-    null, null, null, null, null, null
-  ],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null, null],
-  [
-    null, null, null, null, null, null,
-    { type: 'product-owner', player: 'player1' }, { type: 'product-owner', player: 'player1' }
-  ],
-  [
-    null, null, null, null,
-    { type: 'designer', player: 'player1' }, { type: 'developer', player: 'player1' },
-    { type: 'developer', player: 'player1' }, { type: 'designer', player: 'player1' }
-  ],
-];
-
-export default function Board() {
-  const rows = [];
-  for (let i = 0; i < 8; i++) {
-    rows.push(<Row key={i} isEven={i % 2 === 0} />);
-  }
+export default function Board({ boardState, selectedPiece, possibleMoves, onTileClick }: BoardProps) {
+  const rows = boardState.map((rowPieces, i) => (
+    <Row
+      key={i}
+      row={i}
+      rowPieces={rowPieces}
+      isEven={i % 2 === 0}
+      selectedPiece={selectedPiece}
+      possibleMoves={possibleMoves}
+      onTileClick={onTileClick}
+    />
+  ));
 
   return (
     <div className={styles.board}>

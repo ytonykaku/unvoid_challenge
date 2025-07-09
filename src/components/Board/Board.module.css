@@ -41,3 +41,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.selectedTile {
+  background-color: rgba(98, 179, 255, 0.4) !important;
+  cursor: pointer;
+}
+
+.possibleMove {
+  background-color: rgba(98, 179, 255, 0.25) !important;
+  cursor: pointer;
+}

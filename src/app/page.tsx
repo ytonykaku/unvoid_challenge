@@ -1,13 +1,14 @@
-import Board from "@/components/Board/Board";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+import dynamic from 'next/dynamic';
+import styles from './page.module.css';
+
+const Game = dynamic(() => import('./Game'), { ssr: false });
+
+export default function Page() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <h1>Unvoid Chess Game</h1>
-        <Board />
-      </main>
+      <Game />
     </div>
   );
 }
