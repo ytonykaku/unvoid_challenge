@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Board from '@/components/Board/Board';
-import BoardSizeSelector from '@/components/Board/SizeSelector';
+import SizeSelector from '@/components/Board/SizeSelector';
 import { PieceProps, Player } from '@/components/Piece/Piece';
 import styles from './page.module.css';
 
@@ -147,13 +147,13 @@ export default function Game() {
   return (
     <main className={styles.main}>
       <h1>Unvoid Chess Game</h1>
-      <BoardSizeSelector onSizeChange={handleSizeChange} />
       <Board
         boardState={boardState}
         selectedPiece={selectedPiece}
         possibleMoves={possibleMoves}
         onTileClick={handleTileClick}
       />
+      <SizeSelector onSizeChange={handleSizeChange} />
     </main>
   );
 }
