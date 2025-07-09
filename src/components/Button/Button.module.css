@@ -1,0 +1,76 @@
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  transition: all 0.2s ease-in-out;
+}
+
+.text {
+  font-family: "Kanit-SemiBold", sans-serif;
+  font-size: 13px;
+  line-height: 115%;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.noise {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.default {
+  height: 36px;
+  padding: 16px;
+  border-radius: 8px;
+}
+.small {
+  height: 28px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.primary {
+  background: radial-gradient(closest-side, #7D89C4, #4967FE);
+  border-image: linear-gradient(105.44deg, #CBD3FB, #B9C0E7) 1;
+  color: var(--main-platinum-white);
+}
+.primary:hover:not(:disabled) {
+  border-color: var(--main-platinum-white);
+}
+.primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.secondary {
+  background: radial-gradient(closest-side, rgba(90, 90, 94, 0.3), rgba(26, 26, 26, 0.3));
+  border-image: linear-gradient(102.18deg, rgba(250, 250, 250, 0.5), rgba(148, 148, 148, 0.5)) 1;
+  backdrop-filter: blur(4px);
+  color: var(--gray-c9c9c9);
+}
+.secondary:hover:not(:disabled) {
+  border-image: linear-gradient(93.91deg, #FAFAFA, #949494) 1;
+}
+.secondary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.disabled {
+  background: var(--gray-28282a);
+  color: var(--gray-5a5a5e);
+  border-color: transparent;
+  cursor: not-allowed;
+}

@@ -23,8 +23,13 @@ export default function Board({ boardState, selectedPiece, possibleMoves, onTile
     />
   ));
 
+  const boardStyle = {
+    '--board-width': boardState[0]?.length || 8,
+    '--board-height': boardState.length,
+  } as React.CSSProperties;
+
   return (
-    <div className={styles.board}>
+    <div className={styles.board} style={boardStyle}>
       {rows}
     </div>
   );

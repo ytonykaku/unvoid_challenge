@@ -11,20 +11,15 @@ interface TileProps {
 
 export default function Tile({ isEven, piece, isSelected, isPossibleMove, onClick }: TileProps) {
   const classNames = [
-    styles.tile,
-    isEven ? styles.evenTile : styles.oddTile,
-    isSelected ? styles.selectedTile : '',
+    styles.square,
+    isEven ? styles.light : styles.dark,
+    isSelected ? styles.selected : '',
     isPossibleMove ? styles.possibleMove : ''
   ].filter(Boolean).join(' ');
 
   return (
-    <div
-      className={classNames}
-      onClick={onClick}
-    >
-      <div className={styles.tileContent}>
-        {piece && <Piece type={piece.type} player={piece.player} />}
-      </div>
+    <div className={classNames} onClick={onClick}>
+      {piece && <Piece type={piece.type} player={piece.player} />}
     </div>
   );
 }
