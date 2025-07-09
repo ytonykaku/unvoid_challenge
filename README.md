@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Desafio Unvoid Chess Game
 
-## Getting Started
+Este projeto é a implementação de um desafio front-end que consiste em criar um jogo de tabuleiro semelhante a xadrez, com peças e regras personalizadas. Escolhi a opção de realizar em React.
 
-First, run the development server:
+**Repositório:** [https://github.com/ytonykaku/unvoid_challenge](https://github.com/ytonykaku/unvoid_challenge)
+
+## Funcionalidades Implementadas
+
+* **Tabuleiro Dinâmico e Responsivo:** O tabuleiro pode ser redimensionado pelos jogadores, suportando dimensões de 6x6 a 12x12, incluindo formatos irregulares como 6x7, e adapta-se a diferentes tamanhos de ecrã.
+* **Peças com Regras Únicas:** Foram implementadas as três peças do jogo (Developer, Designer, Product Owner) com as suas regras de movimento (que ficou quebrado rs).
+* **Jogabilidade Interativa Completa:**
+    * Sistema de turnos entre;
+    * Seleção de peças com feedback visual.
+    * Destaque das casas de destino possíveis para a peça selecionada.
+    * Lógica de movimento e captura de peças adversárias.
+* **Componentes de Alta Fidelidade (utilizando plugin do Figma para extrair detalhes):**
+    * Peças renderizadas a partir de assets, correspondendo ao protótipo.
+
+## O Processo de Desenvolvimento
+
+O projeto foi construído de forma iterativa e organizada, seguindo boas práticas de desenvolvimento front-end.
+
+* **Arquitetura de Componentes:** A interface foi dividida em componentes reutilizáveis (Board, Tile, Piece, Button, SizeSelector), cada um com a sua responsabilidade.
+* **Desenvolvimento Orientado a Funcionalidades (Feature Branching):** Cada nova funcionalidade foi desenvolvida na sua própria branch, garantindo que a branch main estivesse sempre estável.
+* **Implementação Incremental:**
+    * UI estática -> gestão de estado e lógica de interatividade -> refinar UI ->  funcionalidades avançadas
+* **Problemas durante o desenvolvimento:** "Hydration Errors", o que necessitou a separação de funcionalidades de maneira mais adequada
+
+## Como Executar o Projeto
 
 ```bash
+git clone [https://github.com/ytonykaku/unvoid_challenge.git](https://github.com/ytonykaku/unvoid_challenge.git)
+cd unvoid_challenge
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
