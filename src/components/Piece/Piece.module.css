@@ -1,0 +1,31 @@
+.piece {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+.pieceIcon {
+  position: relative;
+  z-index: 11;
+}
+
+.player1 {
+  background-color: #3a3a3a;
+  color: #dcdcdc;
+  border: 2px solid #5a5a5a;
+}
+
+.player2 {
+  background-color: #4a2d5e;
+  color: #e9d8f5;
+  border: 2px solid #8e44ad;
+}

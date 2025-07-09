@@ -1,4 +1,4 @@
-import Board from "@/components/Board";
+import Board from "@/components/Board/Board";
 import styles from "./page.module.css";
 
 export default function Home() {
