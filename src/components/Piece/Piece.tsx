@@ -2,6 +2,10 @@ import styles from './Piece.module.css';
 
 export type PieceType = 'developer' | 'designer' | 'product-owner';
 export type Player = 'player1' | 'player2';
+export interface PieceProps {
+  type: PieceType;
+  player: Player;
+}
 
 export interface PieceProps {
   type: PieceType;

@@ -1,7 +1,9 @@
 import Tile from './Tile';
+import { PieceProps } from '../Piece/Piece';
 
 interface RowProps {
   isEven: boolean;
+  rowPieces: (PieceProps | null)[];
 }
 
 export default function Row({ isEven }: RowProps) {
