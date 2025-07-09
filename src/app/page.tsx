@@ -1,10 +1,13 @@
-import Image from "next/image";
+import Board from "@/components/Board";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <h1>Hello World!</h1>
+      <main className={styles.main}>
+        <h1>Unvoid Chess Game</h1>
+        <Board />
+      </main>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 640px;
+  height: 640px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-color: black;
+  background-color: white;
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+}
+
+.evenTile {
+  background-color: transparent;
+}
+
+.oddTile {
+  background-color: black; 
+}
+
+
+@media (max-width: 768px) {
+  .board {
+    width: 90vw;
+    height: 90vw;
+  }
+  .tile {
+    width: 11.25vw; 
+    height: 11.25vw;
+  }
+}
